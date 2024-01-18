@@ -41,17 +41,17 @@ const theme = createTheme({
     }
 });
 
-const TourCard = () => {
+const TourCard = ({tour}) => {
     return (
         <Grid item xs={3}>
             {/* theme in curlies is the variable */}
             <ThemeProvider theme={theme}>
                 <Paper elevation={3}>
-                    <img className="img" src="https://images.unsplash.com/photo-1500964757637-c85e8a162699?q=80&w=2403&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+                    <img className="img" src={tour.image} />
                     <Box paddingX={1}>
                         {/* variant is how this will look; component this will be the h2 element */}
                         <Typography variant="subtitle1" component="h2">
-                            Immerse into the Scenery
+                            {tour.name}
                         </Typography>
                         <Box sx={{
                             display: "flex",
@@ -59,7 +59,7 @@ const TourCard = () => {
                         }}>
                             <AccessTime sx={{ width: 12.5 }} />
                             <Typography variant="body2" component="p" marginLeft={0.5}>
-                                5 hours
+                                {tour.duration} hours
                             </Typography>
                         </Box>
                         <Box sx={{
@@ -68,17 +68,17 @@ const TourCard = () => {
                         }}
                             marginTop={3}
                         >
-                            <Rating name="read-only" value={4.5} precision={0.5} size="small" readOnly />
+                            <Rating name="read-only" value={tour.rating} precision={0.5} size="small" readOnly />
                             <Typography variant="body2" component="p" marginLeft={0.5}>
-                                4.5
+                                {tour.rating}
                             </Typography>
                             <Typography variant="body3" component="p" marginLeft={1.5}>
-                                (655 reviews)
+                                ({tour.numberOfReviews} reviews)
                             </Typography>
                         </Box>
                         <Box>
                             <Typography variant="h6" component="h3" marginTop={0}>
-                                From $147
+                                From ${tour.price}
                             </Typography>
                         </Box>
                     </Box>
