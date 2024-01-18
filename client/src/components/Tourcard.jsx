@@ -40,7 +40,9 @@ const TourCard = () => {
                         </Typography>
                     </Box>
                     <Box>
-                        <Typography variant="h6" component="h3"
+                        <Typography variant="h6" component="h3" marginTop={0}>
+                            From $147
+                        </Typography>
                     </Box>
                 </Box>
 
