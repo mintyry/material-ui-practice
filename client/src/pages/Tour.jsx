@@ -5,6 +5,10 @@ import Container from "@mui/material/Container";
 import Box from "@mui/material/Box"
 import ImageCollage from "../components/ImageCollage";
 import CustomizedAccordions from "../components/Accordion";
+import Paper from "@mui/material/Paper";
+import BottomNavigation from "@mui/material/BottomNavigation";
+import BasicModal from "../components/Modal";
+
 
 const Tour = () =>
     <Container sx={{ width: 900 }}>
@@ -12,8 +16,8 @@ const Tour = () =>
         <Typography variant="h3" component="h1" marginTop={3}>
             Explore the world in Vegas
         </Typography>
-        <Box marginTop={3} sx={{display: "flex"}} >
-            <img src="https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg" alt="picture" height={325}  />
+        <Box marginTop={3} sx={{ display: "flex" }} >
+            <img src="https://www.adorama.com/alc/wp-content/uploads/2018/11/landscape-photography-tips-yosemite-valley-feature.jpg" alt="picture" height={325} />
             <ImageCollage />
         </Box>
         <Box>
@@ -30,7 +34,13 @@ const Tour = () =>
             </Typography>
             <CustomizedAccordions />
         </Box>
-        
+
+        <Paper sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }} elevation={3}>
+            <BottomNavigation showLabels>
+              <BasicModal />
+            </BottomNavigation>
+        </Paper>
+
     </Container>;
 
 export default Tour;
